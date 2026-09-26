@@ -48,6 +48,20 @@ GPU verification on the Heidi L4 also passed:
 - fixed path: `4x/36` forward passed with loss `0.641650915145874`
 - omitted-forward path: reproduced the original shape error
 
+Full optimizer verification then passed on a RunPod H100 SXM:
+
+- mode: bf16 LoRA rank 8, batch 1, gradient accumulation 1, `4x/36`
+- result: 3/3 forward, backward, and optimizer steps completed
+- losses: `0.8761`, `0.6406`, `0.8317`
+- runtime: `56.84s`
+- adapter load: passed in a fresh MiniCPM/PEFT process
+- artifact: `tools/minicpm_edge/outputs/_smoke_heading_highres_4x36_h100`
+- log: `tools/minicpm_edge/eval_runs/highres_optimizer_smoke_h100/highres_train_smoke_h100.log`
+
+The same bf16 and 4-bit QLoRA smoke runs reached backward on the 24 GB Heidi
+L4 but ran out of memory while requesting another `5.71 GiB`. Use the L4 for
+high-resolution forward/eval work and an H100-class GPU for `4x/36` training.
+
 Run this on the next GPU workbench before a high-res training job:
 
 ```bash
@@ -68,5 +82,6 @@ PYTHONPATH=tools/minicpm_edge python tools/minicpm_edge/probe_training_forward.p
   --omit-forward-downsample
 ```
 
-Do not spend on a full H100 high-res v3 training run until the first command
-passes.
+The forward and optimizer gates now pass. High-resolution v3 training can use
+this path, while retaining a short optimizer smoke at the start of each fresh
+GPU environment.

@@ -83,7 +83,7 @@ APP_DEBUG_NOTES_*.md
 
 # Clean seed repo exclusions
 *.md
-docs/
+docs/*
 doc/
 knowledge-base/
 knowledge_base/
@@ -97,6 +97,11 @@ test_*.py
 *.spec.*
 !README.md
 !/tools/minicpm_edge/*.md
+
+# Agent skill config is part of this repo (see CLAUDE.md).
+!/CLAUDE.md
+!docs/agents/
+!docs/agents/*.md
 
 # CI smoke tests are part of this repo.
 !tests/
