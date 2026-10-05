@@ -25,7 +25,7 @@ Remedy PDF Desktop is a local-first document accessibility remediation applicati
 
 1. Run it through [PAC 2024](https://pac.pdf-accessibility.org/en) and/or Adobe Acrobat Pro's built-in Accessibility Checker.
 2. Listen to it with a screen reader (NVDA on Windows, VoiceOver on macOS).
-3. Walk the five WCAG criteria this tool cannot test — see [`docs/HUMAN_REVIEW_GUIDE.md`](docs/HUMAN_REVIEW_GUIDE.md).
+3. Walk the five WCAG criteria this tool cannot test.
 
 Do not claim WCAG, PDF/UA, Section 508, ADA Title II, or EAA compliance on the strength of this app's "Triage: Clear" verdict alone. That verdict means "the automated checks we *can* run passed" — nothing more.
 
