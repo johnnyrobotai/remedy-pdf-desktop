@@ -530,7 +530,7 @@ class OpenRouterVisionProvider:
         model: str = "openai/gpt-4o-mini",
         base_url: str = "https://openrouter.ai/api/v1",
         *,
-        http_referer: str = "https://github.com/projectremedyai/remedy-pdf-desktop",
+        http_referer: str = "https://github.com/johnnyrobotai/remedy-pdf-desktop",
         x_title: str = "Remedy PDF Desktop",
     ) -> None:
         self.api_key = api_key

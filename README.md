@@ -3,7 +3,7 @@
 Remedy PDF Desktop is a local-first document accessibility remediation application. It accepts PDF, Word, PowerPoint, and Excel files, produces a remediated output plus an HTML accessibility report, and surfaces signals for manual review before publication.
 
 > **Download (macOS):** a signed + notarized `.dmg` installer is published on the
-> [Releases](https://github.com/projectremedyai/remedy-pdf-desktop/releases) page.
+> [Releases](https://github.com/johnnyrobotai/remedy-pdf-desktop/releases) page.
 > Double-click, drag the app to Applications, and launch — it bundles the Ollama
 > runtime and backend, and pulls the default vision model on first run. No
 > Hugging Face account or manual Ollama install required.
@@ -62,7 +62,7 @@ Word, PowerPoint, and Excel uploads use a separate Office remediator and still f
 ### Install
 
 ```bash
-git clone https://github.com/projectremedyai/remedy-pdf-desktop.git
+git clone https://github.com/johnnyrobotai/remedy-pdf-desktop.git
 cd remedy-pdf-desktop
 
 pip install -e .[dev]
